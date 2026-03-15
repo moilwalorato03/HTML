@@ -120,12 +120,11 @@ margin-top:10px;
 
 <div class="page" id="page1">
 
-<h1>For You Ma'am! 😊</h1>
+<h1>Hi Beautiful ❤️</h1>
 
-<img src="IMG-20251122-WA0015.jpg">
-
-<h2>✨ REFILWE MASOPA ✨</h2>
-
+<img src="">
+  
+<h2>✨ REFILE REJOICE MASOPA✨</h2>
 <p>
 Before anything begins… I just want you to know you’re someone very special to me 😊
 </p>
@@ -145,6 +144,7 @@ Before anything begins… I just want you to know you’re someone very special 
 <br><br>
 
 <button onclick="nextPage(3)">Continue</button>
+  <button onclick="nextPage(1)">⬅ Go Back</button>
 
 </div>
 
@@ -177,6 +177,7 @@ I left you a little letter below 💌
 </p>
 
 <div class="envelope" onclick="nextPage(4)">✉️</div>
+  <button onclick="nextPage(2)">⬅ Go Back</button>
 
 </div>
 
@@ -206,6 +207,7 @@ So I want to ask you something honestly…
 
 <button onclick="nextPage(5)">Yes</button>
 <button onclick="nextPage(5)">Yes 😊</button>
+  <button onclick="nextPage(2)">⬅ Go Back</button>
 
 </div>
 
@@ -215,8 +217,7 @@ So I want to ask you something honestly…
 
 <h1>Thank You ❤️</h1>
 
-
-<img src="IMG-20251227-WA0079.jpg">
+<img src="me.jpg">
 
 <p>
 
@@ -299,6 +300,19 @@ setTimeout(()=>{star.remove()},4000)
 }
 
 setInterval(createStar,400)
+  // Cursor sparkles on mouse move (sparse)
+document.addEventListener("mousemove", function(e){
+    if(Math.random() < 0.15){ // only ~15% of moves create a sparkle
+        let sparkle = document.createElement("div");
+        sparkle.className = "star";
+        let emojis = ["✨","💖","🌹","😊"];
+        sparkle.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+        sparkle.style.left = e.pageX + "px";
+        sparkle.style.top = e.pageY + "px";
+        document.body.appendChild(sparkle);
+        setTimeout(()=>{ sparkle.remove() }, 1200); // remove after 1.2s
+    }
+});
 
 </script>
 
