@@ -2,160 +2,121 @@
 <html>
 <head>
 
-<title>A Little Something For You ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<title>For Someone Special ❤️</title>
 
 <style>
 
 body{
+background: linear-gradient(135deg,#ffd6e7,#ffe6f0);
+font-family: "Segoe UI", cursive;
+text-align:center;
 margin:0;
-background:#ffd6e7;
-font-family:'Quicksand',sans-serif;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
 overflow:hidden;
 }
 
-/* CARD */
-
-.card{
-width:560px;
-max-width:92%;
-background:white;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 30px rgba(255,0,100,0.3);
-position:relative;
+.page{
+display:none;
+padding:40px;
 }
 
-/* TITLES */
-
-h1{
-font-family:'Pacifico',cursive;
-color:#d1005b;
-margin:10px;
+.active{
+display:block;
 }
-
-/* PAGES */
-
-.page{display:none;}
-#page1{display:block}
-
-/* IMAGE */
 
 img{
-width:220px;
-border-radius:14px;
-box-shadow:0 0 15px rgba(255,0,0,0.4);
-margin:10px;
+max-width:250px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
 }
 
-/* BUTTONS */
-
 button{
-padding:11px 22px;
-margin:8px;
+padding:12px 25px;
 border:none;
-border-radius:20px;
+border-radius:25px;
 background:#ff4d6d;
 color:white;
-font-size:15px;
+font-size:16px;
+margin:10px;
 cursor:pointer;
 }
 
 button:hover{
-background:#ff1a4d;
+background:#ff1f4b;
 }
 
-/* ROSE HEART */
+h1{
+color:#c2185b;
+}
 
-.rose{
+.message{
+max-width:600px;
+margin:auto;
+font-size:18px;
+line-height:1.6;
+}
+
+.heart{
 position:absolute;
-font-size:22px;
+color:red;
+animation: float 6s linear infinite;
 }
 
-/* BEATING HEART EFFECT */
-
-.heartBeat{
-animation:beat 1.2s infinite;
-}
-
-@keyframes beat{
-0%{transform:scale(1);}
-50%{transform:scale(1.2);}
-100%{transform:scale(1);}
-}
-
-/* FLOATING EMOJIS */
-
-.star{
-position:absolute;
-font-size:24px;
-animation:shoot 4s linear forwards;
-}
-
-@keyframes shoot{
-0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-500px);opacity:0;}
+@keyframes float{
+0%{transform:translateY(100vh);opacity:1;}
+100%{transform:translateY(-10vh);opacity:0;}
 }
 
 .envelope{
 font-size:60px;
 cursor:pointer;
-margin-top:10px;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="card">
-
 <!-- PAGE 1 -->
 
-<div class="page" id="page1">
+<div class="page active" id="page1">
 
-<h1>For You Ma'am ❤️</h1>
+<h1>For You Ma'am! 😊</h1>
 
-<img src='https://github.com/moilwalorato03/HTML/blob/main/IMG-20251122-WA0015.jpg'>
+<img src="">
 
-<h2>✨ REFILWE REJOICE MASOPA✨</h2>
+<h2>✨ REFILWE MASOPA ✨</h2>
 
 <p>
-Before anything begins… Just know you are a special person 😊
+Before anything begins... I just want you to know that you are a very special person ❤️
 </p>
 
-<button onclick="showHeart()">Start</button>
+<button onclick="showPage('page2')">Start</button>
 
 </div>
 
-<!-- PAGE 2 HEART -->
+<!-- PAGE 2 -->
 
 <div class="page" id="page2">
 
-<h1>You Could Be Mine ❤️</h1>
+<h1>I Adore You ❤️</h1>
 
-<div id="heartContainer" class="heartBeat"></div>
+<p>Imagine roses forming a heart just for you 🌹</p>
 
-<br><br>
+<h2>🌹 YOU COULD BE MINE🌹</h2>
 
-<button onclick="nextPage(3)">Continue</button>
-<button onclick="nextPage(1)">⬅ Go Back</button>
+<button onclick="showPage('page3')">Next</button>
+<button onclick="showPage('page1')">Back</button>
 
 </div>
 
-<!-- PAGE 3 COMFORT -->
+<!-- PAGE 3 -->
 
 <div class="page" id="page3">
 
-<h1>A Little Reminder ⚖️</h1>
+<h1>A message for you 💌</h1>
 
-<p>
+<div class="message">
 
 Even the strongest people sometimes feel tired.<br><br>
 
@@ -169,155 +130,98 @@ And brighter days always find their way back. 🌅<br><br>
 
 You are stronger than you realize.<br>
 You are smarter than you think.<br>
-Have Outmost Faith in Yourself and in God.<br>
 And the world is better because you're in it. ❤️
-
-</p>
-
-<p>
-I left you a little letter below 💌
-</p>
-
-<div class="envelope" onclick="nextPage(4)">✉️</div>
-<button onclick="nextPage(2)">⬅ Go Back</button>
 
 </div>
 
-<!-- PAGE 4 LOVE LETTER -->
+<div class="envelope" onclick="showPage('page4')">
+✉️
+</div>
+
+<button onclick="showPage('page2')">Back</button>
+
+</div>
+
+<!-- PAGE 4 -->
 
 <div class="page" id="page4">
 
-<h1>A Question From My Heart ❤️</h1>
+<h1>A question for you ❤️</h1>
 
-<p>
+<p class="message">
 
 I’ve been thinking about something.<br><br>
 
 What if we didn’t rush anything…<br>
-What if we simply tried everything all over again and saw where things go?<br><br>
+What if we simply tried again and saw where things go?<br><br>
 
-Maybe we could build something slowly with consistency.<br>
+Maybe we could build something slowly.<br>
 Smile more.<br>
 Laugh more.<br>
-And discover how much happiness i bring along with every little thing i bring to the table. 😊✨<br><br>
+And discover how much happiness small things can bring. 😊✨<br><br>
 
 So I want to ask you something honestly…
-
 </p>
 
-<h2>Would you like to try working things out with me(Cause you know we would make beautiful babies)?</h2>
+<label>
+<input type="checkbox" onclick="showPage('page5')"> Yes
+</label>
 
-<button onclick="nextPage(5)">Yes</button>
-<button onclick="nextPage(5)">Yes 😊</button>
-<button onclick="nextPage(3)">⬅ Go Back</button>
+<label>
+<input type="checkbox" onclick="showPage('page5')"> Yes
+</label>
+
+<br><br>
+
+<button onclick="showPage('page3')">Back</button>
 
 </div>
 
-<!-- PAGE 5 RESULT -->
+<!-- PAGE 5 -->
 
 <div class="page" id="page5">
 
-<h1>Thank You ❤️</h1>
+<h1>Thank You ❤️😊</h1>
 
-<img src="https://github.com/moilwalorato03/HTML/blob/main/IMG-20251227-WA0079.jpg">
+<img src="me.jpg">
 
-<p>
+<p class="message">
 
 I promise to show you how much happiness can come from the little things.<br><br>
 
-Small laughs.😊<br>
-Small adventures.✨<br>
+Small laughs.<br>
+Small adventures.<br>
 Small moments that slowly become beautiful memories. 😊✨<br><br>
 
-And I promise to always remind you just how amazing you are.🌹
+And I promise to always remind you just how amazing you are.
 
 </p>
-<button onclick="nextPage(4)">⬅ Go Back</button>
 
-<p style="font-size:26px">🌹❤️😊✨</p>
-
-</div>
+<button onclick="showPage('page1')">Restart</button>
 
 </div>
 
 <script>
 
-/* PAGE SWITCH */
-
-function nextPage(page){
-
-document.querySelectorAll(".page").forEach(p=>p.style.display="none");
-
-document.getElementById("page"+page).style.display="block";
-
+function showPage(page){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(page).classList.add('active');
 }
 
-/* HEART SHAPE */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+document.body.appendChild(heart);
 
-function showHeart(){
+setTimeout(()=>heart.remove(),6000);
 
-nextPage(2)
+},600);
 
-let container=document.getElementById("heartContainer")
-
-container.innerHTML=""
-
-for(let t=0;t<Math.PI*2;t+=0.25){
-
-let x=16*Math.pow(Math.sin(t),3)
-let y=13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)
-
-let rose=document.createElement("div")
-
-rose.className="rose"
-rose.innerHTML="🌹"
-
-rose.style.left=(x*8+200)+"px"
-rose.style.top=(-y*8+120)+"px"
-
-container.appendChild(rose)
-
-}
-
-}
-
-/* FLOATING SMILEY STARS */
-
-function createStar(){
-
-let star=document.createElement("div")
-
-star.className="star"
-
-let emojis=["😊","✨","💖","🌹"]
-
-star.innerHTML=emojis[Math.floor(Math.random()*emojis.length)]
-
-star.style.left=Math.random()*100+"vw"
-star.style.top=Math.random()*100+"vh"
-
-document.body.appendChild(star)
-
-setTimeout(()=>{star.remove()},4000)
-
-}
-
-setInterval(createStar,400)
-
-// Cursor sparkles on mouse move (sparse)
-document.addEventListener("mousemove", function(e){
-    if(Math.random() < 0.15){ // only ~15% of moves create a sparkle
-        let sparkle = document.createElement("div");
-        sparkle.className = "star";
-        let emojis = ["✨","💖","🌹","😊"];
-        sparkle.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
-        sparkle.style.left = e.pageX + "px";
-        sparkle.style.top = e.pageY + "px";
-        document.body.appendChild(sparkle);
-        setTimeout(()=>{ sparkle.remove() }, 1200); // remove after 1.2s
-    }
-});
 </script>
 
 </body>
 </html>
+
