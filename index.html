@@ -1,320 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<title>A Little Something For You ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Vae 💜</title>
 
 <style>
-
-body{
-margin:0;
-background:#ffd6e7;
-font-family:'Quicksand',sans-serif;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-overflow:hidden;
+body {
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#3b0066,#800080);
+    color:white;
+    text-align:center;
+    overflow:hidden;
 }
 
-/* CARD */
+/* Pages */
+.page {
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:20px;
+}
+.active {display:flex;}
 
-.card{
-width:560px;
-max-width:92%;
-background:white;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 0 30px rgba(255,0,100,0.3);
-position:relative;
+/* Buttons */
+button {
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background:pink;
+    font-weight:bold;
+    cursor:pointer;
+    margin:10px;
+    transition:0.3s;
+}
+button:hover {
+    background:white;
+    transform:scale(1.1);
 }
 
-/* TITLES */
-
-h1{
-font-family:'Pacifico',cursive;
-color:#d1005b;
-margin:10px;
+/* Sparkles */
+.sparkle {
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite;
+}
+@keyframes twinkle {
+    0%,100%{opacity:0;}
+    50%{opacity:1;}
 }
 
-/* PAGES */
-
-.page{display:none;}
-#page1{display:block}
-
-/* IMAGE */
-
-img{
-width:220px;
-border-radius:14px;
-box-shadow:0 0 15px rgba(255,0,0,0.4);
-margin:10px;
+/* Floating romantic words */
+.floating {
+    position:absolute;
+    font-size:12px;
+    opacity:0.6;
+    animation:floatUp 10s linear infinite;
+}
+@keyframes floatUp {
+    from {transform:translateY(100vh);}
+    to {transform:translateY(-10vh);}
 }
 
-/* BUTTONS */
-
-button{
-padding:11px 22px;
-margin:8px;
-border:none;
-border-radius:20px;
-background:#ff4d6d;
-color:white;
-font-size:15px;
-cursor:pointer;
+/* Animated name */
+.glow {
+    font-size:2.5em;
+    animation:glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+    from {text-shadow:0 0 10px pink;}
+    to {text-shadow:0 0 25px white;}
 }
 
-button:hover{
-background:#ff1a4d;
+/* Heart */
+.heart {
+    width:120px;
+    height:120px;
+    background:red;
+    transform:rotate(-45deg);
+    position:relative;
+    animation:beat 1s infinite;
+}
+.heart:before,
+.heart:after {
+    content:"";
+    width:120px;
+    height:120px;
+    background:red;
+    border-radius:50%;
+    position:absolute;
+}
+.heart:before {top:-60px;}
+.heart:after {left:60px;}
+
+@keyframes beat {
+    0%,100%{transform:scale(1) rotate(-45deg);}
+    50%{transform:scale(1.2) rotate(-45deg);}
 }
 
-/* ROSE HEART */
-
-.rose{
-position:absolute;
-font-size:22px;
+/* Roses inside heart */
+.rose {
+    position:absolute;
+    font-size:18px;
+    animation:float 3s infinite;
+}
+@keyframes float {
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
 }
 
-/* BEATING HEART EFFECT */
-
-.heartBeat{
-animation:beat 1.2s infinite;
+/* Typewriter */
+.typewriter {
+    max-width:400px;
+    border-right:2px solid white;
+    white-space:nowrap;
+    overflow:hidden;
+    animation:typing 5s steps(40,end), blink .7s infinite;
 }
-
-@keyframes beat{
-0%{transform:scale(1);}
-50%{transform:scale(1.2);}
-100%{transform:scale(1);}
-}
-
-/* FLOATING EMOJIS */
-
-.star{
-position:absolute;
-font-size:24px;
-animation:shoot 4s linear forwards;
-}
-
-@keyframes shoot{
-0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-500px);opacity:0;}
-}
-
-.envelope{
-font-size:60px;
-cursor:pointer;
-margin-top:10px;
-}
-
+@keyframes typing {from{width:0} to{width:100%}}
+@keyframes blink {50%{border-color:transparent}}
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<script>
+// Sparkles
+for(let i=0;i<60;i++){
+ let s=document.createElement("div");
+ s.className="sparkle";
+ s.style.top=Math.random()*100+"%";
+ s.style.left=Math.random()*100+"%";
+ document.body.appendChild(s);
+}
+
+// Floating romantic words
+let words=["love","beautiful","mine","PrettyLady","Vae 💜"];
+setInterval(()=>{
+ let w=document.createElement("div");
+ w.className="floating";
+ w.innerText=words[Math.floor(Math.random()*words.length)];
+ w.style.left=Math.random()*100+"%";
+ document.body.appendChild(w);
+ setTimeout(()=>w.remove(),10000);
+},1000);
+</script>
 
 <!-- PAGE 1 -->
-
-<div class="page" id="page1">
-
-<h1>For You BooBear❤️✨</h1>
-
-<img src="IMG-20251122-WA0015.jpg">
-  
-<h2>✨ REFILWE REJOYCE MASOPA✨</h2>
-<p>
-Before anything begins… I just want you to know you’re a very special someone😊
-</p>
-
-<button onclick="showHeart()">Start</button>
-
+<div class="page active" id="page1">
+    <h1 class="glow">Heyy Pretty Vae 💜</h1>
+    <p>I have something for you...</p>
+    <button onclick="nextPage(2)">Click Me</button>
 </div>
 
-<!-- PAGE 2 HEART -->
-
+<!-- PAGE 2 -->
 <div class="page" id="page2">
 
-<h1>I Adore You ❤️</h1>
+    <div class="heart">
+        <div class="rose" style="top:30px;left:20px;">🌹</div>
+        <div class="rose" style="top:50px;left:60px;">🌹</div>
+        <div class="rose" style="top:70px;left:40px;">🌹</div>
+    </div>
 
-<div id="heartContainer" class="heartBeat"></div>
+    <p class="typewriter">
+        You're honestly the prettiest girl I've ever seen... and it's not even close.
+        You are also the first girl i've actually been this scared to talk to,i am trying my hardest to not be too much.
+    </p>
 
-<br><br>
-
-<button onclick="nextPage(3)">Continue</button>
-  <button onclick="nextPage(1)">⬅ Go Back</button>
-
+    <div>
+        <button onclick="nextPage(1)">Back</button>
+        <button onclick="nextPage(3)">Continue</button>
+    </div>
 </div>
 
-<!-- PAGE 3 COMFORT -->
-
+<!-- PAGE 3 -->
 <div class="page" id="page3">
 
-<h1>A Little Reminder ⚖️</h1>
+    <h2>From all the 42 videos this is my favourite: 🎥</h2>
 
-<p>
+    <video width="300" controls>
+        <source src="your-video.mp4" type="video/mp4">
+    </video>
 
-Even the strongest people sometimes feel tired.<br><br>
+    <p style="max-width:400px;">
+        I love this video because it captures your smile..those eyes
+        something I can't stop thinking about.Wishing i was the reason behind it.
+    </p>
 
-But remember something important…<br><br>
+    <p>And honestly... I just really like you like a lot since the day i saw you 😉</p>
+    <p>You gave me the tingles and everytime i get a notification from you i think about our future family😌<</p>
 
-Life has its difficult cases, but the final verdict is never decided in the middle of the trial. ⚖️✨<br><br>
+    <h3>Will you be mine? 😉</h3>
 
-Things get better.<br>
-Storms pass.<br>
-And brighter days always find their way back. 🌅<br><br>
+    <button onclick="alert('You just made me the happiest person alive 💜')">Yes 💜</button>
+    <button onclick="alert('Hmm... I’ll just try harder then 😏')">Maybe 😌</button>
 
-You are stronger than you realize.<br>
-You are smarter than you think.<br>
-Have Faith in yourself and in God!<br>
-And the world is better because you're in it. ❤️
-
-</p>
-
-<p>
-I left you a little letter below 💌
-</p>
-
-<div class="envelope" onclick="nextPage(4)">✉️</div>
-  <button onclick="nextPage(2)">⬅ Go Back</button>
-
-</div>
-
-<!-- PAGE 4 LOVE LETTER -->
-
-<div class="page" id="page4">
-
-<h1>A Question From My Heart ❤️</h1>
-
-<p>
-
-I’ve been thinking about something.<br><br>
-
-What if we didn’t rush anything…<br>
-What if we simply tried talking and understanding each other again and saw where things go?<br><br>
-
-Maybe we could build something slowly( Like a house or something)Laughs awkwardly.<br>
-Smile more.<br>
-Laugh more.<br>
-And discover how much happiness small things can bring. 😊✨<br><br>
-
-So I want to ask you something honestly…
-
-</p>
-
-<h2>You know what i wanna ask?( You know we could make beautiful babies)</h2>
-
-<button onclick="nextPage(5)">Yes</button>
-<button onclick="nextPage(5)">Yes 😊</button>
-  <button onclick="nextPage(2)">⬅ Go Back</button>
-
-</div>
-
-<!-- PAGE 5 RESULT -->
-
-<div class="page" id="page5">
-
-<h1>I permit youu to lick the screen❤️</h1>
-
-<img src="IMG-20251227-WA0079.jpg">
-
-<p>
-
-I promise to show you how much happiness can comes with Lorato and her little things she brings to the table..<br><br>
-
-Small laughs.<br>
-Small adventures.<br>
-Small moments that slowly become beautiful memories. 😊✨<br><br>
-
-And I will be here to always remind you just how amazing you are.
-
-</p>
-
-<p style="font-size:26px">🌹❤️😊✨</p>
-
-</div>
-
+    <button onclick="nextPage(2)">Back</button>
 </div>
 
 <script>
-
-/* PAGE SWITCH */
-
 function nextPage(page){
-
-document.querySelectorAll(".page").forEach(p=>p.style.display="none");
-
-document.getElementById("page"+page).style.display="block";
-
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById('page'+page).classList.add('active');
 }
-
-/* HEART SHAPE */
-
-function showHeart(){
-
-nextPage(2)
-
-let container=document.getElementById("heartContainer")
-
-container.innerHTML=""
-
-for(let t=0;t<Math.PI*2;t+=0.25){
-
-let x=16*Math.pow(Math.sin(t),3)
-let y=13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t)
-
-let rose=document.createElement("div")
-
-rose.className="rose"
-rose.innerHTML="🌹"
-
-rose.style.left=(x*8+200)+"px"
-rose.style.top=(-y*8+120)+"px"
-
-container.appendChild(rose)
-
-}
-
-}
-
-/* FLOATING SMILEY STARS */
-
-function createStar(){
-
-let star=document.createElement("div")
-
-star.className="star"
-
-let emojis=["😊","✨","💖","🌹"]
-
-star.innerHTML=emojis[Math.floor(Math.random()*emojis.length)]
-
-star.style.left=Math.random()*100+"vw"
-star.style.top=Math.random()*100+"vh"
-
-document.body.appendChild(star)
-
-setTimeout(()=>{star.remove()},4000)
-
-}
-
-setInterval(createStar,400)
-  // Cursor sparkles on mouse move (sparse)
-document.addEventListener("mousemove", function(e){
-    if(Math.random() < 0.15){ // only ~15% of moves create a sparkle
-        let sparkle = document.createElement("div");
-        sparkle.className = "star";
-        let emojis = ["✨","💖","🌹","😊"];
-        sparkle.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
-        sparkle.style.left = e.pageX + "px";
-        sparkle.style.top = e.pageY + "px";
-        document.body.appendChild(sparkle);
-        setTimeout(()=>{ sparkle.remove() }, 1200); // remove after 1.2s
-    }
-});
-
 </script>
 
 </body>
